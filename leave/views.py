@@ -1,6 +1,7 @@
 import datetime
 from calendar import HTMLCalendar
 from collections import namedtuple
+from employees.selectors import get_employee
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -856,8 +857,8 @@ def month_leave_plans_page(request, month_id):
 
 @login_required
 @organisationdetail_required
-def employee_leave_details(request, leave_year):
-    employee = request.user.solitonuser.employee
+def employee_leave_details(request, leave_year, employee_id):
+    employee = get_employee(employee_id)
     leave_applications = get_employee_leave_details(employee, leave_year)
     
     leave_record = get_leave_record(employee, leave_year)

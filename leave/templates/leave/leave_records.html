@@ -76,7 +76,7 @@ $(document).ready(function(){
               <td>{{ record.total_taken }}</td>
               <td>{{ record.balance }}</td>
               <td>
-                <a href="{% url 'employee_leave_details' record.leave_year %}" class="btn btn-outline-success btn-rounded waves-effect">
+                <a href="{% url 'employee_leave_details' record.leave_year record.employee.id %}" class="btn btn-outline-success btn-rounded waves-effect">
                   Details
                 </a>
               </td>
