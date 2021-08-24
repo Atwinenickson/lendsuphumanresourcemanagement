@@ -12,7 +12,7 @@ from notification.services import create_notification
 from organisation_details.decorators import organisationdetail_required
 
 from overtime.models import OvertimeApplication, OvertimePlan, OvertimeSchedule
-from overtime.procedures import is_duration_valid
+from overtime.procedures import is_duration_valid, is_today_more_than_a_week_from
 from overtime.selectors import get_all_overtime_applications, get_pending_overtime_applications, \
     get_overtime_application, get_recent_overtime_applications, get_most_recent_overtime_plans, \
     get_overtime_plan, get_overtime_schedules, get_pending_overtime_plans, get_supervisor_user, \
@@ -51,6 +51,9 @@ def apply_for_overtime_page(request):
         description = request.POST.get('description')
         if not is_duration_valid(start_time, end_time):
             messages.error(request, "Duration for the overtime application is not valid")
+            return HttpResponseRedirect(reverse("apply_for_overtime_page"))
+        elif is_today_more_than_a_week_from(start_time):
+            messages.error(request, "Overtime start date is beyond 7 days back")
             return HttpResponseRedirect(reverse("apply_for_overtime_page"))
         else:
             try:
