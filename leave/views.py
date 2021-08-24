@@ -1,6 +1,7 @@
 import datetime
 from calendar import HTMLCalendar
 from collections import namedtuple
+from employees.selectors import get_employee
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -20,6 +21,7 @@ from leave.selectors import (
     get_hod_users,
     get_hr_users,
     get_employee_leave_applications,
+    get_employee_leave_details,
     get_leave_record,
     get_recent_leave_plans, get_hod_pending_leave_plans, get_leave_plan, get_approved_leave_plans, get_current_year)
 from leave.services import send_leave_application_email, send_leave_response_email, send_leave_plan_email, \
@@ -184,8 +186,8 @@ def apply_leave_page(request):
     context = {
         "leave_page": "active",
         "apps": get_employee_leave_applications(employee=employee),
-        "l_types": Leave_Types.objects.all(),
-        "l_balance": leave_balance,
+        "leave_types": Leave_Types.objects.all(),
+        "leave_balance": leave_balance,
         "gender": request.user.solitonuser.employee.gender,
         "role": "user"
     }
@@ -852,3 +854,19 @@ def month_leave_plans_page(request, month_id):
         "leave_plans": leave_plans
     }
     return render(request, "leave/month_leave_plans.html", context)
+
+@login_required
+@organisationdetail_required
+def employee_leave_details(request, leave_year, employee_id):
+    employee = get_employee(employee_id)
+    leave_applications = get_employee_leave_details(employee, leave_year)
+    
+    leave_record = get_leave_record(employee, leave_year)
+    context = {
+        "leave_page": "active",
+        "employee": employee,
+        "applications": leave_applications,
+        "balance": leave_record.balance
+    }
+    return render(request, "leave/employee_leave_details.html", context)
+
