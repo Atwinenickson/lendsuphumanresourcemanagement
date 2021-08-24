@@ -11,6 +11,7 @@ from django.http import JsonResponse
 
 from employees.services import create_employee_instance, suspend, update_deduction, update_statutory_deduction
 from ems_admin.decorators import log_activity
+from ems_admin.models import AuditTrail
 from ems_auth.decorators import ems_login_required, hr_required, first_login
 from ems_auth.models import User
 from leave.forms.leave_record import LeaveRecordForm
@@ -46,13 +47,14 @@ from leave.selectors import get_leave_record, get_current_year
 def dashboard_page(request):
     # Get the user
     user = request.user
+    # Delete all logs
+    AuditTrail.objects.all().delete()
     try:
         notifications = get_user_notifications(user)
         number_of_notifications = notifications.count()
         active_employees = get_active_employees()
         suspend_employees = get_passive_employees()
         number_of_employees = active_employees.count()
-
         context = {
             "user": user,
             "dashboard_page": "active",
@@ -61,9 +63,7 @@ def dashboard_page(request):
             "number_of_notifications": number_of_notifications,
             "number_of_suspended": suspend_employees.count(),
         }
-
         return render(request, 'employees/dashboard.html', context)
-
     except User.DoesNotExist:
         return render(request, 'ems_auth/login.html', {"message": "Soliton User does not exist"})
 
