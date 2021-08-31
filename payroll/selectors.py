@@ -48,3 +48,7 @@ def get_activated_csv(activated):
 
 def get_current_month():
     return datetime.datetime.today().month
+
+
+def get_current_year():
+    return datetime.datetime.today().year
