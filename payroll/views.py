@@ -584,7 +584,7 @@ def payroll_download(request, id):
     for payroll in payrolls:
         name = payroll.employee.first_name + " " + payroll.employee.last_name
         writer.writerow(
-            [name, payroll.employee.basic_salary, payroll.gross_salary, payroll.employee_nssf, payroll.employer_nssf,
+            [name, payroll.basic_salary, payroll.gross_salary, payroll.employee_nssf, payroll.employer_nssf,
              payroll.paye, payroll.employee.lunch_allowance, payroll.overtime,
              payroll.bonus, payroll.sacco_deduction,
              payroll.damage_deduction,

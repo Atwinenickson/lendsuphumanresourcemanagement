@@ -157,7 +157,7 @@ class Deduction(models.Model):
 
 class StatutoryDeduction(models.Model):
     employee = models.OneToOneField(Employee, on_delete=models.CASCADE)
-    local_service_tax = models.FloatField()
+    local_service_tax = models.FloatField(default=0.0)
 
     def __str__(self):
         return f"Local service tax {self.local_service_tax}"
