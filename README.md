@@ -16,10 +16,10 @@ This is a simple Django 2.0+ project template with my preferred setup. Most Djan
 ## How to install
 
 ```bash
-$ mv example.env .env
-$ pipenv install 
-$ python manage.py migrate
-$ ./restore_db.sh
+mv example.env .env
+pipenv install 
+python manage.py migrate
+./restore_db.sh
 ```
 
 
