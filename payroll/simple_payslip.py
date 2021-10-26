@@ -122,7 +122,8 @@ class SimplePayslip:
 
     @property
     def total_non_statutory_deductions(self):
-        return self.sacco_deduction_amount + self.damage_deduction_amount
+        return self.sacco_deduction_amount + self.damage_deduction_amount + self.salary_advance_amount \
+               + self.police_fine_amount
 
     @property
     def net_salary(self):
