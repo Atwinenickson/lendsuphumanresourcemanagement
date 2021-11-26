@@ -2,6 +2,7 @@ import csv
 import datetime
 
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 from django.db import IntegrityError
 from django.shortcuts import render
 
@@ -255,6 +256,8 @@ def generate_payslip_pdf(request, id):
     # Get the payslip
     payslip = Payslip.objects.get(pk=id)
     user = request.user
+    if not user.solitonuser.employee == payslip.employee:
+        raise PermissionDenied
     context = {
         "payslip": payslip,
         "month": payslip.payroll_record.month,
