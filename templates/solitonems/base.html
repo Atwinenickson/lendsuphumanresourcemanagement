@@ -219,7 +219,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a href="{{ request.META.HTTP_REFERER }}"><i class="material-icons">keyboard_arrow_left</i></a>
+                    <a href="{{ request.META.HTTP_REFERER }}"><i class="material-icons"></i></a>
                     <a class="navbar-brand" href="#pablo"><b>{%block page_title %}{%endblock%}</b></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
@@ -234,7 +234,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#pablo">
-                                <i class="material-icons">dashboard</i>
+                                <i class="material-icons"></i>
                                 <p class="d-lg-none d-md-block">
                                     Stats
                                 </p>
@@ -243,7 +243,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">notifications</i>
+                                <i class="material-icons"></i>
                                 {%if user.get_unread_notifications%}
                                 <span class="notification">{{user.get_unread_notifications.count}}</span>
                                 {%endif%}
@@ -265,7 +265,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">person</i>
+                                <i class="material-icons"></i>
                                 <p class="d-lg-none d-md-block">
                                     Account
                                 </p>
