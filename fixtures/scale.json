@@ -1,0 +1,11 @@
+[
+    {
+      "model": "organisation_details.SalaryScale",
+      "pk": 1,
+      "fields": {
+        "level": "1",
+        "minimum": "10000",
+        "maximum":"1200000"
+      }
+    }
+  ]

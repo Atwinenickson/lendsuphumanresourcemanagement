@@ -6,7 +6,7 @@
       "name": "Software Developer",
       "number_of_slots": 10,
       "type":"Full Time",
-      "salary": 1000000,
+      "salary_scale":1,
       "currency": 1,
       "description": "Good Job"
     }

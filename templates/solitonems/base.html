@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>
-        SOLITON BAKOZI
+        LENDSUP FINANCIAL SERVICES
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
@@ -32,7 +32,7 @@
             <center>
                 <img src=" {% static 'registration/images/icons/logo.svg'  %} " style='width:50%' class="logo-normal"/>
                 <a href="#" class="simple-text logo-normal">
-                    SOLITON BAKOZI
+                   LENDSUP FINANCIAL
                 </a>
             </center>
         </div>
@@ -42,7 +42,7 @@
 
                 <li class="nav-item {{admin}}" data-toggle="popover-admin" title="Admin">
                     <a class="nav-link" href="#" >
-                        <i class="material-icons">verified_user</i>
+                        <i class="material-icons"></i>
                         <p>Admin</p>
                     </a>
                     <ul id="popover-admin" class="nav list-group" style="display: none">
@@ -54,14 +54,14 @@
 
                 <li class="nav-item {{dashboard_page}}">
                     <a class="nav-link" href="{% url 'dashboard_page' %}">
-                        <i class="material-icons">dashboard</i>
+                        <i class="material-icons"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
 
                 <li class="nav-item {{organisation_page}}" data-toggle="popover-organisation" title="Organisation">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">account_balance</i>
+                        <i class="material-icons"></i>
                         <p>Organisation</p>
                     </a>
                     <ul id="popover-organisation" class="nav list-group" style="display: none">
@@ -74,7 +74,7 @@
 
                 <li class="nav-item  {{ employees_page }}">
                     <a class="nav-link" href="{% url 'employees_page' %}">
-                        <i class="material-icons">content_paste</i>
+                        <i class="material-icons"></i>
                         <p>Employees</p>
                     </a>
 
@@ -82,7 +82,7 @@
 
                 <li class="nav-item  {{ leave_page }}" data-toggle="popover-leave" title="Leave" >
                     <a class="nav-link" href="#">
-                        <i class="material-icons">event</i>
+                        <i class="material-icons"></i>
                         <p>Leave</p>
                     </a>
                     <ul id="popover-leave" class="nav list-group" style="display: none">
@@ -98,7 +98,7 @@
                 </li>
                 <li class="nav-item  {{ payroll_page }}" data-toggle="popover-payroll" title="Payroll" >
                     <a class="nav-link" href="#">
-                        <i class="material-icons">library_books</i>
+                        <i class="material-icons"></i>
                         <p>Payroll</p>
                     </a>
                     <ul id="popover-payroll" class="nav list-group" style="display: none">
@@ -109,7 +109,7 @@
                 </li>
                 <li class="nav-item {{overtime_page}}" data-toggle="popover-overtime" title="Overtime">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">hourglass_empty</i>
+                        <i class="material-icons"></i>
                         <p>Overtime</p>
                     </a>
                     <ul id="popover-overtime" class="nav list-group" style="display:none">
@@ -124,7 +124,7 @@
 
                 <li class="nav-item {{holidays_page}}">
                     <a class="nav-link" href="{% url 'holidays_page' %}">
-                        <i class="material-icons">beach_access</i>
+                        <i class="material-icons"></i>
                         <p>Holidays</p>
                     </a>
                 </li>
@@ -132,7 +132,7 @@
                 <li class="nav-item {{performance_page}}" data-toggle="popover-performance"
                     title="Performance Management">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">done_all</i>
+                        <i class="material-icons"></i>
                         <p>Performance Management</p>
                     </a>
                     <ul id="popover-performance" class="nav list-group" style="display:none">
@@ -146,7 +146,7 @@
 
                 <li class="nav-item {{recruitment_page}}" data-toggle="popover-recruitment" title="Recruitment">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">people</i>
+                        <i class="material-icons"></i>
                         <p>Recruitment</p>
                     </a>
                     <ul id="popover-recruitment" class="nav list-group" style="display:none">
@@ -157,7 +157,7 @@
                 </li>
                 <li class="nav-item {{contracts_page}}" data-toggle="popover-contracts" title="Contracts">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">assignment</i>
+                        <i class="material-icons"></i>
                         <p>Contracts</p>
                     </a>
                     <ul id="popover-contracts" class="nav list-group" style="display:none">
@@ -170,7 +170,7 @@
                 </li>
                 <li class="nav-item {{training_page}}" data-toggle="popover-training" title="Training">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">bookmarks</i>
+                        <i class="material-icons"></i>
                         <p>Training</p>
                     </a>
                     <ul id="popover-training" class="nav list-group" style="display:none">
@@ -182,7 +182,7 @@
                 </li>
                 <li class="nav-item {{learning_and_development_page}}" data-toggle="popover-learning-and-development" title="Learning and Development">
                     <a class="nav-link" href="#">
-                        <i class="material-icons">book</i>
+                        <i class="material-icons"></i>
                         <p>Learning and Development</p>
                     </a>
                     <ul id="popover-learning-and-development" class="nav list-group" style="display:none">
@@ -193,7 +193,7 @@
 
                 <li class="nav-item  {{ employees_page }}">
                     <a class="nav-link" href="{% url 'logout' %}">
-                        <i class="material-icons">login</i>
+                        <i class="material-icons"></i>
                         <p>Log out</p>
                     </a>
 

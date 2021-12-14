@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "==> Removing all migration files"
-find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
-find . -path "*/migrations/*.pyc"  -delete
+# echo "==> Removing all migration files"
+# find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+# find . -path "*/migrations/*.pyc"  -delete
 
 echo "==> Removing all data from the database..."
 python manage.py flush --noinput
@@ -29,14 +29,19 @@ python manage.py loaddata fixtures/soliton_users.json
 echo "==> Loading departments..."
 python manage.py loaddata fixtures/departments.json
 
-echo "==> Loading positions..."
-python manage.py loaddata fixtures/positions.json
-
 
 echo "==> Loading teams..."
 python manage.py loaddata fixtures/teams.json
+
+echo "==> Loading salary scale..."
+python manage.py loaddata fixtures/scale.json
+
+echo "==> Loading positions..."
+python manage.py loaddata fixtures/positions.json
 
 echo "==> Loading organisation details..."
 python manage.py loaddata fixtures/organisation_details.json
 
 echo "==> Done!"
+
+

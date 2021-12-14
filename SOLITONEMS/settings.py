@@ -143,6 +143,7 @@ DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CSRF_COOKIE_DOMAIN = None
 
 CRONJOBS = [
     ('0 0 * * *', 'overtime.cron.expire_overtime_applications'),  # Every day at Midnight

@@ -106,5 +106,23 @@
       "is_supervisor": false,
       "password_changed": false
     }
+  },
+  {
+    "model": "ems_auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$GSdBmZzXiG5M$4iykqlSKg8xt53tyJwWdPMO+rbIP0yrTaKf5TgYQGDc=",
+      "last_login": null,
+      "email": "atwinetigidi@gmail.com",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "is_hod": false,
+      "is_hr": false,
+      "is_cfo": false,
+      "is_ceo": false,
+      "is_supervisor": false,
+      "password_changed": false
+    }
   }
 ]
